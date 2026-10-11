@@ -1,0 +1,15 @@
+{
+  "source": "synthetic",
+  "synthetic": true,
+  "symbol": "SYNTH-NQ-GLOBEX",
+  "timeframeSeconds": 60,
+  "tickSize": 0.25,
+  "generator": {
+    "name": "kinfx-nq-globex-synth",
+    "version": 1,
+    "seed": 20261011,
+    "calendar": "globex-like-est-fixed",
+    "activityByHour": true
+  },
+  "disclaimer": "SYNTHETIC PRACTICE DATA ONLY. Not market data. Not CME, NQ, or any vendor replay. Hand-tuned Globex-like calendar and volume shape for CandleDrill practice. Independent seed and price level. Educational use only."
+}

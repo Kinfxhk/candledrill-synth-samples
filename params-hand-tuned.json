@@ -1,0 +1,54 @@
+{
+  "symbol": "SYNTH-NQ-GLOBEX",
+  "seed": 20261011,
+  "startDate": "2026-01-05",
+  "days": 90,
+  "startPrice": 18000,
+  "tickSize": 0.25,
+  "annualVolatility": 0.24,
+  "sessionGapVolatility": 0.004,
+  "baseVolume": 140,
+  "calendar": {
+    "utcOffsetMinutes": -300,
+    "windows": [
+      {
+        "days": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "start": "18:00",
+        "end": "17:00"
+      }
+    ]
+  },
+  "activityByHour": [
+    0.05,
+    0.04,
+    0.04,
+    0.04,
+    0.05,
+    0.06,
+    0.08,
+    0.15,
+    0.4,
+    0.95,
+    1.0,
+    0.72,
+    0.52,
+    0.5,
+    0.58,
+    0.88,
+    0.35,
+    0.0,
+    0.18,
+    0.12,
+    0.1,
+    0.08,
+    0.07,
+    0.06
+  ],
+  "disclaimer": "SYNTHETIC PRACTICE DATA ONLY. Not market data. Not CME, NQ, or any vendor replay. Hand-tuned Globex-like calendar and volume shape for CandleDrill practice. Independent seed and price level. Educational use only."
+}
