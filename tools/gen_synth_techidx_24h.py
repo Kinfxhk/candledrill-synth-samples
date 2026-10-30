@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 """
-SYNTH-NQ-GLOBEX 1-minute synthetic bar generator (practice data only).
+SYNTH-TECHIDX-24H 1-minute synthetic bar generator (practice data only).
 
 Mirrors CandleDrill packages/core/src/synthetic.ts algorithm (GBM-ish + AR(1) log-vol
 + substep OHLC + tick round + SFC32 RNG), extended with:
-  - Globex-like calendar (18:00→17:00, skip hour 17)
+  - near-24h session-like calendar (18:00→17:00, skip hour 17)
   - activityByHour[24] instead of mathematical U-shape
 
 Input is a small params JSON (seed, calendar, activity curve). Output is synthetic
-OHLCV — not market data, not an exchange or vendor replay.
+OHLCV. Not index-licensed. Not exchange, CME, or Nasdaq data. Not affiliated with
+any exchange, index provider, or data vendor.
 """
 from __future__ import annotations
 
@@ -20,6 +21,8 @@ from dataclasses import dataclass
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import List, Sequence
+
+from public_ids import PUBLIC_PACK_SYMBOL, canonical_public_id, public_disclaimer
 
 SUBSTEPS = 8
 VOL_PERSISTENCE = 0.995
@@ -234,17 +237,17 @@ def generate(params: dict) -> tuple[list[dict], dict]:
     meta = {
         "source": "synthetic",
         "synthetic": True,
-        "symbol": params.get("symbol", "SYNTH-NQ-GLOBEX"),
+        "symbol": canonical_public_id(str(params.get("symbol") or PUBLIC_PACK_SYMBOL)),
         "timeframeSeconds": 60,
         "tickSize": tick_size,
         "generator": {
-            "name": "kinfx-nq-globex-synth",
+            "name": "kinfx-techidx-24h-synth",
             "version": 1,
             "seed": seed,
-            "calendar": "globex-like-est-fixed",
+            "calendar": "near-24h-session-like-est-fixed",
             "activityByHour": True,
         },
-        "disclaimer": params.get("disclaimer", "synthetic practice data only"),
+        "disclaimer": public_disclaimer(params.get("disclaimer")),
     }
     return bars, meta
 
