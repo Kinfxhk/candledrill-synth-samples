@@ -1,0 +1,15 @@
+{
+  "source": "synthetic",
+  "synthetic": true,
+  "symbol": "SYNTH-TECHIDX-24H",
+  "timeframeSeconds": 60,
+  "tickSize": 0.25,
+  "generator": {
+    "name": "kinfx-techidx-24h-synth",
+    "version": 1,
+    "seed": 20261011,
+    "calendar": "near-24h-session-like-est-fixed",
+    "activityByHour": true
+  },
+  "disclaimer": "SYNTHETIC PRACTICE DATA ONLY. Not index-licensed. Not exchange, CME, or Nasdaq data. Not affiliated with CME, Nasdaq, any exchange, any index provider, or any data vendor. Not a vendor replay. Hand-tuned near-24h session-like calendar and volume shape for CandleDrill practice. Independent seed and price level. Educational use only."
+}
