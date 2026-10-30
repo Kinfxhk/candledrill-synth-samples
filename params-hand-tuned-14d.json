@@ -1,5 +1,5 @@
 {
-  "symbol": "SYNTH-NQ-GLOBEX",
+  "symbol": "SYNTH-TECHIDX-24H",
   "seed": 20261011,
   "startDate": "2026-01-05",
   "days": 14,
@@ -50,5 +50,5 @@
     0.07,
     0.06
   ],
-  "disclaimer": "SYNTHETIC PRACTICE DATA ONLY. Not market data. Not CME, NQ, or any vendor replay. Hand-tuned Globex-like calendar and volume shape for CandleDrill practice. Independent seed and price level. Educational use only."
+  "disclaimer": "SYNTHETIC PRACTICE DATA ONLY. Not index-licensed. Not exchange, CME, or Nasdaq data. Not affiliated with CME, Nasdaq, any exchange, any index provider, or any data vendor. Not a vendor replay. Hand-tuned near-24h session-like calendar and volume shape for CandleDrill practice. Independent seed and price level. Educational use only."
 }
